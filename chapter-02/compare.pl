@@ -16,13 +16,13 @@ $B = <STDIN>;
 chomp ($B);
 
 if ($A > $B) {
-    print "A > B";
+    print "A > B\n";
 }
 
 if ($A < $B) {
-    print "A < B";
+    print "A < B\n";
 }
 
 if ($A == $B) {
-    print "A = B";
+    print "A = B\n";
 }
