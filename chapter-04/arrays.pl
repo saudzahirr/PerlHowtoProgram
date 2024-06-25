@@ -1,3 +1,8 @@
+# Author: Saud Zahir
+# Contact: m.saud.zahir@gmail.com
+# Date: June 22, 2024
+
+
 @array = ("a", "e", "i", "o", "u");
 print "@array\n";
 
@@ -16,7 +21,10 @@ for ($i = 0; $i < scalar(@array); ++$i) {
     print "array[$i] = $array[$i]\n";
 }
 
-# Arrays Function
+# Slicing in arrays
+print "Sliced array: @array[1, 2, 3]\n";
+
+# Arrays Functions
 
 # Operator qw
 @os = qw (apple windows linux); # ("apple", "windows", "linux")
@@ -61,3 +69,16 @@ print @alphabets, "\n";
 
 splice @alphabets, 2, 5, @range;
 print @alphabets, "\n";
+
+
+# List Functions
+@array = (1, 9, 7, 3, 2);
+
+@reversed = reverse ( @array );
+print "@reversed\n";
+
+# Sort lexically
+print sort { $a cmp $b } @reversed, "\n";
+
+# Sort numerically
+print sort { $a <=> $b } @reversed, "\n";

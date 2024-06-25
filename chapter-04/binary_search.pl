@@ -1,3 +1,8 @@
+# Author: Saud Zahir
+# Contact: m.saud.zahir@gmail.com
+# Date: June 22, 2024
+
+
 print "**********************************\n";
 print "**   Binary  Search Algorithm   **\n";
 print "**********************************\n\n";
