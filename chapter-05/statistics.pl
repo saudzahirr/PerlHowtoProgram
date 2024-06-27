@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# Author: Saud Zahir
+# Contact: m.saud.zahir@gmail.com
+# Date: June 27, 2024
+
 # Create data.
 foreach ( 1..16 ) {
     push ( @data, $_ % 3 + $_ % 5 + $_ % 7 );

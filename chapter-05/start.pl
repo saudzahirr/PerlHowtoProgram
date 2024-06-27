@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# Author: Saud Zahir
+# Contact: m.saud.zahir@gmail.com
+# Date: June 27, 2024
+
 @array = (1..32);
 
 # foreach controlVariable ( list ) {
@@ -136,3 +140,88 @@ OUTER: foreach $row ( 1..10 ) {
     }
 }
 print "\n";
+
+# Bare Blocks
+# a block enclosed by curly braces
+# with zero or more lines of code.
+
+print "Guess number between 1 & 3: ";
+chomp ( $guess = <STDIN> );
+BLOCK: {
+    if ( $guess == 1 ) {
+        print "Right!\n";
+        last BLOCK;
+    }
+
+    if ( $guess == 2 ) {
+        print "Close!\n";
+        last BLOCK;
+    }
+
+    if ( $guess == 3 ) {
+        print "Wrong!\n";
+        last BLOCK;
+    }
+
+    # Default
+    {
+        print "Please re-enter guess (1-3): ";
+        chomp ( $guess = <STDIN> );
+        redo BLOCK;
+    }
+}
+
+# Logical Operators
+
+print "Enter number: ";
+chomp ( $number = <STDIN> );
+
+if ( $number > 3 && $number < 10) {
+    print "Number is between 3 and 10: $number\n";
+}
+unless ( $number > 3 and $number < 10) {
+    print "Number is not between 3 and 10: $number\n";
+}
+
+if ( $number > 3 || $number < 10) {
+    print "Number is between 3 or 10: $number\n";
+}
+unless ( $number > 3 or $number < 10) {
+    print "Number is not between 3 or 10: $number\n";
+}
+
+if ( ! $number > 3 ) {
+    print "Number is less than 3: $number\n";
+}
+
+if ( not $number < 3 ) {
+    print "Number is greater than 3: $number\n";
+}
+
+print "Enter numerator: ";
+chomp ( $num = <STDIN> );
+
+DIV: {
+    print "Enter denominator: ";
+    chomp ( $denom = <STDIN> );
+
+    $denom != 0 or
+    print "ZeroDivisionError: Cannot divide by zero!\n" and redo DIV;
+}
+
+print "\n$num/$denom = ", $num/$denom, "\n";
+
+# Error Functions: die and warn
+
+print "Enter numerator: ";
+chomp ( $num = <STDIN> );
+
+print "Enter denominator: ";
+chomp ( $denom = <STDIN> );
+
+$denom != 0 || die "ZeroDivisionError: Cannot divide by zero!";
+
+print "\n$num/$denom = ", $num/$denom, "\n";
+
+# Perl stores error message in special variable $!
+# warn is same as die, and is used for non fatal errors.
