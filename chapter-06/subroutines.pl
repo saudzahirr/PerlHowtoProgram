@@ -23,12 +23,12 @@ sub generateKeys {
     if ( wantarray() ) {
         ( $n ) = @_;
         for ( 1..$n ) {
-            $keys[$_] = rand();
+            $keys[$_] = srand(); # system generated random numbers
         }
         return @keys;
     }
     else {
-        return rand();
+        return srand();
     }
 }
 
@@ -37,6 +37,7 @@ sub generateKeys {
 # & - Case
 &init;
 
+# Function call
 $key = generateKeys();
 &display($key);
 
@@ -45,3 +46,18 @@ $key = generateKeys();
 
 # Bareword Case.
 display @key;
+
+
+# Random Numbers
+
+srand(1); # Same 3 numbers will be generated
+for ( 1..3 ) {
+    print 1 + int( rand( 6 ) ), " ";
+}
+print "\n";
+
+srand(); # System random number generator reset.
+for ( 1..3 ) {
+    print 1 + int( rand( 6 ) ), " ";
+}
+print "\n";
