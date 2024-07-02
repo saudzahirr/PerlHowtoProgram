@@ -15,4 +15,4 @@ sub display {
     print "\n";
 }
 
-1;
+return 1; # Indicate successful import of module
