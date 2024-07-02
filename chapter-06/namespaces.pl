@@ -14,3 +14,6 @@ Display::display("Hello, world!");
 
 print "Perl version: $main::perlVERSION\n";
 print "Display version: $Display::VERSION\n";
+
+
+# perl -I ../../PerlHowtoProgram/chapter-06 namespaces.pl
