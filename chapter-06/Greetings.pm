@@ -7,8 +7,12 @@
 package Greetings;
 
 use Exporter;
-our @ISA = qw( Exporter );
 
+# @ISA is a special built-in array contains Exporter
+our @ISA = qw ( Exporter );
+
+# @EXPORT is a special built-in array to add elements
+# which we want to export.
 our @EXPORT = qw ( @array &greetings );
 
 our @array = ( 0..15 );

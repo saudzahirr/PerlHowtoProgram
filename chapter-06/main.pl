@@ -14,3 +14,18 @@ use Greetings;
 # time.
 
 &greetings;
+
+# use v5.5.0;
+# We can use with a version number.
+# use Greetings 1.1;
+
+# Perl forces to check the version of module
+# is 1.1 or higher before using the module.
+# The version information is stored as:
+
+# our $VERSION = 1.1;
+
+# If we want to import only specific
+# elements from module, we use:
+
+# use Greetings qw ( &greetings );
